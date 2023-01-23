@@ -1,17 +1,12 @@
 import os
 
+from src.get_actsci_data import get_data
+from src.path_utils import return_object_from_s3
+
 
 def main():
-    import numpy
-    import pandas
-    files=[prefix + '_complete_textref.txt' for prefix in ["5","6c","6us","6I","7","8","9"] ]
-    text = ""
-    for file in files:
-        with open(os.path.join("data", file), 'r', encoding='utf-8') as f:
-            t = f.read()
-        text += t
-    print(len(text))
-
+    text = get_data(exam="9")
+    print(str(round(len(text)/10**6,1))+"M")
 
 
 if __name__ == '__main__':
