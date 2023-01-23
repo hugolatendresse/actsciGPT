@@ -15,4 +15,4 @@ def return_object_from_s3(path):
 
 if __name__ == '__main__':
     text = return_object_from_s3("hugo/5_complete_textref.txt")
-    print(text[0:100])
+    print(list(set(text)))
