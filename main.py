@@ -1,7 +1,5 @@
-import os
 
 from src.get_actsci_data import get_data
-from src.path_utils import return_object_from_s3
 
 
 def main():
